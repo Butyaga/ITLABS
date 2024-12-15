@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="IwtSoldier01Image" UriSource="Image/IwtSoldier01.png"/>
+    <BitmapImage x:Key="RedSoldier01Image" UriSource="Image/RedSoldier01.png"/>
+    <BitmapImage x:Key="IwtSoldier02Image" UriSource="Image/IwtSoldier02.png"/>
+    <BitmapImage x:Key="RedSoldier02Image" UriSource="Image/RedSoldier02.png"/>
+    <BitmapImage x:Key="IwtSoldier03Image" UriSource="Image/IwtSoldier03.png"/>
+    <BitmapImage x:Key="RedSoldier03Image" UriSource="Image/RedSoldier03.png"/>
+    <BitmapImage x:Key="IwtQR" UriSource="Image/IwtQR.png"/>
+    <BitmapImage x:Key="RedQR" UriSource="Image/RedQR.png"/>
+
+    <ImageBrush x:Key="IwtSoldier01Brush" ImageSource="{StaticResource IwtSoldier01Image}"/>
+    <ImageBrush x:Key="RedSoldier01Brush" ImageSource="{StaticResource RedSoldier01Image}"/>
+    <ImageBrush x:Key="IwtSoldier02Brush" ImageSource="{StaticResource IwtSoldier02Image}"/>
+    <ImageBrush x:Key="RedSoldier02Brush" ImageSource="{StaticResource RedSoldier02Image}"/>
+    <ImageBrush x:Key="IwtSoldier03Brush" ImageSource="{StaticResource IwtSoldier03Image}"/>
+    <ImageBrush x:Key="RedSoldier03Brush" ImageSource="{StaticResource RedSoldier03Image}"/>
+
+</ResourceDictionary>

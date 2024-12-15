@@ -1,0 +1,135 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:IWT_RED.ViewModel">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Color.xaml"/>
+        <ResourceDictionary Source="Font.xaml"/>
+        <ResourceDictionary Source="Image.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Common">
+        <Setter Property="Control.Background" Value="Black"/>
+        <Setter Property="Control.FontFamily" Value="{StaticResource Montserrat}"/>
+    </Style>
+
+    <Style x:Key="Page01TextBox" BasedOn="{StaticResource Common}">
+        <Setter Property="Control.FontStyle" Value="Italic"/>
+        <Setter Property="Control.FontSize" Value="120"/>
+        <Setter Property="Control.FontWeight" Value="ExtraBold"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource MainLabelBrush}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextBox.TextAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="Page01Button" TargetType="Control" BasedOn="{StaticResource Common}">
+        <Setter Property="Control.FontSize" Value="80"/>
+        <Setter Property="Control.FontWeight" Value="Regular"/>
+        <Setter Property="Control.Width" Value="1000"/>
+        <Setter Property="Control.Height" Value="280"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource MainButtonTextBrush}"/>
+        <Setter Property="Control.Background" Value="{StaticResource MainButtonBackgroundBrush}"/>
+        <Setter Property="Control.BorderThickness" Value="2"/>
+        <Setter Property="Control.BorderBrush" Value="White"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Stretch"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="140" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="IwtSoldier01">
+        <Setter Property="Control.Background" Value="{StaticResource IwtSoldier01Brush}"/>
+    </Style>
+
+    <Style x:Key="RedSoldier01">
+        <Setter Property="Control.Background" Value="{StaticResource RedSoldier01Brush}"/>
+    </Style>
+
+    <Style x:Key="IwtSoldier02">
+        <Setter Property="Control.Background" Value="{StaticResource IwtSoldier02Brush}"/>
+    </Style>
+
+    <Style x:Key="RedSoldier02">
+        <Setter Property="Control.Background" Value="{StaticResource RedSoldier02Brush}"/>
+    </Style>
+
+    <Style x:Key="IwtSoldier03">
+        <Setter Property="Control.Background" Value="{StaticResource IwtSoldier03Brush}"/>
+    </Style>
+
+    <Style x:Key="RedSoldier03">
+        <Setter Property="Control.Background" Value="{StaticResource RedSoldier03Brush}"/>
+    </Style>
+
+    <Style x:Key="Page02TextBox01" BasedOn="{StaticResource Page01TextBox}">
+        <Setter Property="Control.FontSize" Value="75"/>
+    </Style>
+
+    <Style x:Key="Page02TextBox02" BasedOn="{StaticResource Page01TextBox}">
+        <Setter Property="Control.FontStyle" Value="Normal"/>
+        <Setter Property="Control.FontSize" Value="45"/>
+        <Setter Property="Control.FontWeight" Value="Regular"/>
+        <Setter Property="Control.Margin" Value="10"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource LabelSecondaryBrush}"/>
+    </Style>
+
+    <Style x:Key="Page02TextBox03" BasedOn="{StaticResource Page01TextBox}">
+        <Setter Property="Control.FontSize" Value="30"/>
+        <Setter Property="Control.FontWeight" Value="Regular"/>
+        <Setter Property="Control.Margin" Value="0"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource LabelTertiaryBrush}"/>
+        <Setter Property="TextBox.TextAlignment" Value="Left"/>
+    </Style>
+
+    <Style x:Key="Page02PersonalData" TargetType="TextBox" BasedOn="{StaticResource Common}">
+        <Setter Property="Control.FontStyle" Value="Italic"/>
+        <Setter Property="Control.FontSize" Value="36"/>
+        <Setter Property="Control.FontWeight" Value="Regular"/>
+        <Setter Property="Control.Width" Value="1171"/>
+        <Setter Property="Control.Height" Value="80"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource LabelTertiaryBrush}"/>
+        <Setter Property="Control.Background" Value="{StaticResource PersonalDataBrush}"/>
+        <Setter Property="Control.Margin" Value="0 80 0 0"/>
+        <Setter Property="Control.BorderThickness" Value="0 0 0 2"/>
+    </Style>
+
+    <Style x:Key="Page02BigButton" TargetType="Button" BasedOn="{StaticResource Common}">
+        <Setter Property="Control.FontSize" Value="50"/>
+        <Setter Property="Control.FontWeight" Value="SemiBold"/>
+        <Setter Property="Control.Width" Value="1171"/>
+        <Setter Property="Control.Height" Value="200"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource ButtonForeGroundBrush}"/>
+        <Setter Property="Control.Background" Value="{StaticResource ButtonYellowBrush}"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="4" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="PDFButton" TargetType="Button" BasedOn="{StaticResource Page02BigButton}">
+        <Setter Property="Content" Value="Просмотреть PDF-файл"/>
+        <Setter Property="Control.FontSize" Value="24"/>
+        <Setter Property="Control.Width" Value="423"/>
+        <Setter Property="Control.Height" Value="123"/>
+        <Setter Property="Control.Foreground" Value="{StaticResource ButtonYellowBrush}"/>
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.BorderThickness" Value="2"/>
+        <Setter Property="Control.BorderBrush" Value="{StaticResource ButtonYellowBrush}"/>
+    </Style>
+
+    <Style x:Key="Page03PinCode" TargetType="TextBox" BasedOn="{StaticResource Common}">
+        <Setter Property="Control.FontFamily" Value="Roboto"/>
+        <Setter Property="Control.FontSize" Value="200"/>
+        <Setter Property="Control.FontWeight" Value="Regular"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Foreground" Value="White"/>
+        <Setter Property="Control.Background" Value="#05FFFFFF"/>
+        <Setter Property="Control.BorderThickness" Value="2"/>
+        <Setter Property="Control.BorderBrush" Value="#7AFFFFFF"/>
+    </Style>
+
+</ResourceDictionary>

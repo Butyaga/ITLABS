@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Color x:Key="IwtPrimary">#FCBB18</Color>
+    <Color x:Key="IwtSecondary">#FFBA00</Color>
+    <Color x:Key="RedPrimary">#B9211C</Color>
+    <Color x:Key="MainLabel">#F3F3F3</Color>
+    <Color x:Key="MainButtonPrimary">#AEAEAE</Color>
+    <Color x:Key="LabelSecondary">#7D7D7D</Color>
+    <Color x:Key="LabelTertiary">#80FFFFFF</Color>
+    <Color x:Key="ButtonYellow">#FBB911</Color>
+    <Color x:Key="ButtonForeGround">#141310</Color>
+
+    <SolidColorBrush x:Key="IwtPrimaryBrush" Color="{StaticResource IwtPrimary}"/>
+    <SolidColorBrush x:Key="IwtSecondaryBrush" Color="{StaticResource IwtSecondary}"/>
+    <SolidColorBrush x:Key="RedPrimaryBrush" Color="{StaticResource RedPrimary}"/>
+    <SolidColorBrush x:Key="MainLabelBrush" Color="{StaticResource MainLabel}"/>
+    <SolidColorBrush x:Key="MainButtonTextBrush" Color="{StaticResource MainButtonPrimary}"/>
+    <SolidColorBrush x:Key="LabelSecondaryBrush" Color="{StaticResource LabelSecondary}"/>
+    <SolidColorBrush x:Key="LabelTertiaryBrush" Color="{StaticResource LabelTertiary}"/>
+    <SolidColorBrush x:Key="ButtonYellowBrush" Color="{StaticResource ButtonYellow}"/>
+    <SolidColorBrush x:Key="ButtonForeGroundBrush" Color="{StaticResource ButtonForeGround}"/>
+    
+    <LinearGradientBrush x:Key="MainButtonBackgroundBrush">
+        <GradientStop Color="#0DFFFFFF" Offset="0"/>
+        <GradientStop Color="#00FFFFFF" Offset="0.5"/>
+        <GradientStop Color="#0DFFFFFF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PersonalDataBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
+        <GradientStop Color="#00FFFFFF" Offset="0"/>
+        <GradientStop Color="#0DFFFFFF" Offset="1"/>
+    </LinearGradientBrush>
+
+</ResourceDictionary>

@@ -1,0 +1,143 @@
+﻿<Page x:Class="IWT_RED.View.Page03"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IWT_RED.View"
+      xmlns:vm="clr-namespace:IWT_RED.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="1824" d:DesignWidth="2736"
+      d:Background="Black"
+      Title="Page03">
+
+    <Page.DataContext>
+        <vm:Page03ViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source=".\Resources\Template.xaml"/>
+                <ResourceDictionary Source=".\Resources\Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        <vm:PinCodeConverter x:Key="PinCodeConverter"/>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1583*"/>
+            <ColumnDefinition Width="1153*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="323*"/>
+                <RowDefinition Height="273*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="239*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="207*"/>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="230*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300*"/>
+                    <ColumnDefinition Width="800*"/>
+                    <ColumnDefinition Width="300*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <TextBlock  Style="{StaticResource Page02TextBox01}">
+                    ПОДТВЕРДИТЕ<LineBreak/>УКАЗАННЫЙ НОМЕР<LineBreak/>ТЕЛЕФОНА
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="480*"/>
+                    <ColumnDefinition Width="430*"/>
+                    <ColumnDefinition Width="480*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <TextBlock Style="{StaticResource Page02TextBox02}" FontFamily="Consolas">
+                    Введите код из смс
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300*"/>
+                    <ColumnDefinition Width="800*"/>
+                    <ColumnDefinition Width="300*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <Grid Height="239" Width="484">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="138"/>
+                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="138"/>
+                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="138"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Text="{Binding ElementName=PinCodeSource, Path=Text, Converter={StaticResource PinCodeConverter},ConverterParameter=0}" Style="{StaticResource Page03PinCode}"/>
+                        <TextBox Grid.Column="2" Text="{Binding ElementName=PinCodeSource, Path=Text, Converter={StaticResource PinCodeConverter},ConverterParameter=1}" Style="{StaticResource Page03PinCode}"/>
+                        <TextBox Grid.Column="4" Text="{Binding ElementName=PinCodeSource, Path=Text, Converter={StaticResource PinCodeConverter},ConverterParameter=2}" Style="{StaticResource Page03PinCode}"/>
+                        <TextBox Grid.ColumnSpan="5" x:Name="PinCodeSource" Text="{Binding PinCode}" MaxLength="3" Background="Transparent" Foreground="Transparent" BorderThickness="0"/>
+                    </Grid>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180*"/>
+                    <ColumnDefinition Width="1200*"/>
+                    <ColumnDefinition Width="180*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <Button Content="Подтвердить номер" Command="{Binding SubmitAuthentificationCommand}" Style="{StaticResource Page02BigButton}"/>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Row="9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="440*"/>
+                    <ColumnDefinition Width="510*"/>
+                    <ColumnDefinition Width="440*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <TextBlock TextDecorations="Underline" Style="{StaticResource Page02TextBox03}">
+                    Прислать код повторно
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="500*"/>
+                <RowDefinition Height="2648*"/>
+                <RowDefinition Height="250*"/>
+                <RowDefinition Height="160*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.RowSpan="5" Style="{StaticResource IwtSoldier02}"/>
+            <Grid Grid.Column="1" Grid.RowSpan="5" Style="{StaticResource RedSoldier02}"/>
+            <Viewbox Grid.Column="0" Grid.Row="1">
+                <Control Template="{StaticResource IwtLogo}"/>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="1">
+                <Control Template="{StaticResource RedLogo}"/>
+            </Viewbox>
+            <Viewbox Grid.Column="0" Grid.Row="3">
+                <Button  Command="{Binding ShowPDFIwtCommand}" Style="{StaticResource PDFButton}"/>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="3">
+                <Button Command="{Binding ShowPDFRedCommand}" Style="{StaticResource PDFButton}"/>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Page>

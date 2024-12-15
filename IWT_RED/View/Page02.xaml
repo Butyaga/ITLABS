@@ -1,0 +1,101 @@
+﻿<Page x:Class="IWT_RED.View.Page02"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IWT_RED.View"
+      xmlns:vm="clr-namespace:IWT_RED.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="3648" d:DesignWidth="5472"
+      d:Background="Black"
+      Title="Page02">
+
+    <Page.DataContext>
+        <vm:Page02ViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source=".\Resources\Template.xaml"/>
+                <ResourceDictionary Source=".\Resources\Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2310*"/>
+            <ColumnDefinition Width="3162*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="500*"/>
+                <RowDefinition Height="2648*"/>
+                <RowDefinition Height="250*"/>
+                <RowDefinition Height="160*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.RowSpan="5" Style="{StaticResource IwtSoldier01}"/>
+            <Grid Grid.Column="1" Grid.RowSpan="5" Style="{StaticResource RedSoldier01}"/>
+            <Viewbox Grid.Column="0" Grid.Row="1">
+                <Control Template="{StaticResource IwtLogo}"/>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="1">
+                <Control Template="{StaticResource RedLogo}"/>
+            </Viewbox>
+            <Viewbox Grid.Column="0" Grid.Row="3">
+                <Button  Command="{Binding ShowPDFIwtCommand}" Style="{StaticResource PDFButton}"/>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="3">
+                <Button Command="{Binding ShowPDFRedCommand}" Style="{StaticResource PDFButton}"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="400*"/>
+                <RowDefinition Height="400*"/>
+                <RowDefinition Height="300*"/>
+                <RowDefinition Height="1200*"/>
+                <RowDefinition Height="480*"/>
+                <RowDefinition Height="415*"/>
+                <RowDefinition Height="300*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="420*"/>
+                <ColumnDefinition Width="2350*"/>
+                <ColumnDefinition Width="380*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="1" Grid.Row="1">
+                <TextBlock  Style="{StaticResource Page02TextBox01}">
+                    ХОТИТЕ ПОСМОТРЕТЬ<LineBreak/>КАТАЛОГ ПРОДУКЦИИ?
+                </TextBlock>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="2">
+                <TextBlock Style="{StaticResource Page02TextBox02}">
+                    Заполните форму и мы вышлем вам<LineBreak/>его на электронную почту
+                </TextBlock>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="3">
+                <StackPanel>
+                    <TextBox Text="{Binding PersonalData.Name}" Style="{StaticResource Page02PersonalData}"/>
+                    <TextBox Text="{Binding PersonalData.Telephone}" Style="{StaticResource Page02PersonalData}"/>
+                    <TextBox Text="{Binding PersonalData.Email}" Style="{StaticResource Page02PersonalData}"/>
+                </StackPanel>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="4">
+                <TextBlock Style="{StaticResource Page02TextBox03}">
+                    Я даю согласие на обработку персональных данных и соглашаюсь<LineBreak/>с политикой конфиденциальности.
+                </TextBlock>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="5">
+                <Button Content="Подтвердить данные" Command="{Binding SubmitPersonalDataCommand}" Style="{StaticResource Page02BigButton}"/>
+            </Viewbox>
+        </Grid>
+    </Grid>
+
+</Page>
